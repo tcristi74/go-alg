@@ -5,6 +5,21 @@ package tests
 //	"testing"
 //)
 
+//LoadArray1
+func LoadArray1() []int {
+
+	arr := []int{-2, 1, -3, 4, -1, 2, 1, -5, 7}
+	return arr
+
+}
+
+//LoadArray2
+func LoadArray2() []int {
+
+	arr := []int{-2, -1}
+	return arr
+
+}
 //LoadDictionary
 func LoadDictionary() map[string]bool {
 
@@ -28,7 +43,7 @@ func LoadDictionary() map[string]bool {
 }
 
 //LoadMatrix
-func LoadMatrix(matrix  *[3][4]string){
+func LoadMatrix(matrix *[3][4]string) {
 	matrix[0][0] = "d"
 	matrix[0][1] = "d"
 	matrix[0][2] = "e"

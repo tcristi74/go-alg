@@ -6,6 +6,8 @@ import (
 
 import (
 	"github.com/tcristi74/go-alg/tests"
+	"github.com/tcristi74/go-alg/algorithm"
+	"github.com/tcristi74/go-alg/palindrome"
 )
 
 var matrix [3][4]string
@@ -16,14 +18,33 @@ type direction string
 
 func init() {
 
+
+
+}
+
+
+func main() {
+	v:=palin.CheckStringIsPalindrome("thisiht")
+	fmt.Println(v);
+	ret :=  palin.GetSubPalindromesFromString("thisihttatbbdbcrabdb")
+	for ar,no :=range ret {
+		fmt.Println(ar,no)
+	}
+}
+
+func mainsubarray() {
+
 	// populate matrix
 	tests.LoadMatrix(&matrix)
 
 	// populate dictionary
 	dic = tests.LoadDictionary()
-}
 
-func main() {
+	arr :=[]int {3,6,-7}
+
+	sum :=algorithm.MaxSubArray(arr)
+	fmt.Println(sum)
+
 	for key, value := range dic {
 		fmt.Println("Key:", key, "Value:", value)
 	}
