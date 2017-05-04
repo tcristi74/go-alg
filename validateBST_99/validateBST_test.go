@@ -5,9 +5,8 @@ import (
 	"testing"
 )
 
-//TestIsValidBST
-func TestIsValidBST(t *testing.T) {
 
+func ATestIsValidBST(t *testing.T) {
 
 	root := TreeNode{Val: 20, Left: nil, Right: nil}
 	root.Left = &TreeNode{Val: 18, Left: nil, Right: nil}
@@ -25,6 +24,21 @@ func TestIsValidBST(t *testing.T) {
 	fmt.Println("done loading the tree")
 
 	if IsValidBST(&root) {
+		fmt.Println("it is BST")
+	} else {
+		fmt.Println("it is NOT BST")
+	}
+}
+
+//TestArrayToBst
+func TestArrayToBst(t *testing.T) {
+
+	fmt.Println("Start TestArrayToBst")
+	arr:=[]int {3,6,1,3,7,2,89,4,45,12,10,34,5}
+	fmt.Println(arr)
+	tree:= ArrayToBST(arr)
+
+	if IsValidBST(tree) {
 		fmt.Println("it is BST")
 	} else {
 		fmt.Println("it is NOT BST")

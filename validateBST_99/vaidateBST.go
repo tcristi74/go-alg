@@ -1,6 +1,10 @@
 package validBst
 
-import "fmt"
+import (
+
+	"fmt"
+	"sort"
+)
 
 type TreeNode struct {
 	Val   int`2`
@@ -37,6 +41,37 @@ func IsValidBST(root *TreeNode) bool {
 	}
 	return true
 }
+
+
+func ArrayToBST(arr []int)  *TreeNode {
+
+	rootNode :=TreeNode{ Left:nil,Right:nil}
+	sort.Ints(arr)
+	createBst(&rootNode,arr)
+	return &rootNode
+
+}
+
+func createBst(node *TreeNode, arr []int){
+
+	if node ==nil {
+		node = &TreeNode{ Left: nil, Right: nil}
+	}
+	if len(arr)==1 {
+		node.Val=arr[0]
+		return
+	}
+	//get the middle
+	middle:=len(arr)/2
+	node.Val=arr[middle-1]
+	//split slice in two
+	if middle>1 {
+		createBst(node.Left, arr[0:middle-1])
+	}
+	createBst(node.Right,arr[middle:])
+}
+
+
 
 func traverseInOrder(node *TreeNode, arr *[]int) {
 
