@@ -7,11 +7,10 @@ import (
 )
 
 type TreeNode struct {
-	Val   int`2`
+	Val   int
 	Left  *TreeNode
 	Right *TreeNode
 }
-
 
 
 func IsValidBST(root *TreeNode) bool {
@@ -47,28 +46,32 @@ func ArrayToBST(arr []int)  *TreeNode {
 
 	rootNode :=TreeNode{ Left:nil,Right:nil}
 	sort.Ints(arr)
-	createBst(&rootNode,arr)
+	createBst(&rootNode,&arr)
 	return &rootNode
 
 }
 
-func createBst(node *TreeNode, arr []int){
+func createBst(node *TreeNode, arr *[]int){
 
-	if node ==nil {
-		node = &TreeNode{ Left: nil, Right: nil}
-	}
-	if len(arr)==1 {
-		node.Val=arr[0]
+	//if node ==nil {
+	//	node = &TreeNode{ Left: nil, Right: nil}
+	//}
+	if len(*arr)==1 {
+		node.Val=(*arr)[0]
 		return
 	}
 	//get the middle
-	middle:=len(arr)/2
-	node.Val=arr[middle-1]
+	middle:=len(*arr)/2
+	node.Val=(*arr)[middle-1]
 	//split slice in two
 	if middle>1 {
-		createBst(node.Left, arr[0:middle-1])
+		sliceLeft:=(*arr)[0:middle-1]
+		node.Left = &TreeNode{ Left: nil, Right: nil}
+		createBst(node.Left, &sliceLeft)
 	}
-	createBst(node.Right,arr[middle:])
+	sliceRight:=(*arr)[middle:]
+	node.Right = &TreeNode{ Left: nil, Right: nil}
+	createBst(node.Right,&sliceRight)
 }
 
 
