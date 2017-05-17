@@ -6,8 +6,19 @@ import (
 	"github.com/tcristi74/go-alg/tests"
 )
 
-//TestMaxSubArray
+
+func BenchmarkSum(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		arr :=tests.LoadArray1()
+		_ =MaxSubArray(arr)
+	}
+}
+
+//TestMaxSubArray  execute with go test -bench=.
 func TestMaxSubArray(t *testing.T)  {
+
+
+
 	arr :=tests.LoadArray1()
 	fmt.Println(arr)
 	sum :=MaxSubArray(arr)
