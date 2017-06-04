@@ -5,13 +5,10 @@ import (
 	"testing"
 )
 
-<<<<<<< HEAD
-//TestArrayToBst
-func ATestIsValidBST(t *testing.T) {
-=======
+
 
 func TestIsValidBST(t *testing.T) {
->>>>>>> 425d8152b3642e61f6ae703a6b52e6654e15f3cf
+
 
 	root := TreeNode{Val: 20, Left: nil, Right: nil}
 	root.Left = &TreeNode{Val: 18, Left: nil, Right: nil}

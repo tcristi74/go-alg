@@ -53,15 +53,12 @@ func ArrayToBST(arr []int)  *TreeNode {
 
 func createBst(node *TreeNode, arr *[]int){
 
-<<<<<<< HEAD
 	if node ==nil {
 		node = &TreeNode{ Left: nil, Right: nil}
 	}
-=======
 	//if node ==nil {
 	//	node = &TreeNode{ Left: nil, Right: nil}
 	//}
->>>>>>> 425d8152b3642e61f6ae703a6b52e6654e15f3cf
 	if len(*arr)==1 {
 		node.Val=(*arr)[0]
 		return
@@ -72,18 +69,15 @@ func createBst(node *TreeNode, arr *[]int){
 	//split slice in two
 	sliceLeft :=(*arr)[0:middle-1]
 	if middle>1 {
-<<<<<<< HEAD
 		createBst(node.Left,&sliceLeft )
 	}
-	sliceRight :=(*arr)[middle:]
-=======
+		sliceRight :=(*arr)[middle:]
 		sliceLeft:=(*arr)[0:middle-1]
 		node.Left = &TreeNode{ Left: nil, Right: nil}
 		createBst(node.Left, &sliceLeft)
 	}
 	sliceRight:=(*arr)[middle:]
 	node.Right = &TreeNode{ Left: nil, Right: nil}
->>>>>>> 425d8152b3642e61f6ae703a6b52e6654e15f3cf
 	createBst(node.Right,&sliceRight)
 }
 
