@@ -23,7 +23,7 @@ func GetSubPalindromesFromString(str string) map[string]int {
 				m[w] = 1
 			}
 		}
-		if len(w) > (len(str)+1-k)/2  {
+		if len(w) > (len(str)+1-k)/2 {
 			k++
 			i = k
 		}

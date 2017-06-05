@@ -24,4 +24,3 @@ func GetBestTradingDeal(nums []int) int {
 	}
 	return maxDiff
 }
-

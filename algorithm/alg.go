@@ -33,7 +33,7 @@ func MaxSubArray(nums []int) int {
 			}
 
 			fmt.Println("new sum", sum, maxsum)
-			if sum > maxsum  && curStart>0 {
+			if sum > maxsum && curStart > 0 {
 				maxsum = sum
 			}
 			fmt.Println("new maxsum", maxsum)

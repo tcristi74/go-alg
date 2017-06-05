@@ -18,14 +18,13 @@ func TestWildcard(t *testing.T) {
 	//mystring = "abcdeyyyy"
 	//pattern = "a???e*"
 
-	mystring="zacabz"
-	pattern="*a?b*"
+	mystring = "zacabz"
+	pattern = "*a?b*"
 
 	if !isMatch(mystring, pattern) {
 
 		t.Errorf("Wilcard match fails for string== %v, pattern %v", mystring, pattern)
 	}
-
 
 }
 

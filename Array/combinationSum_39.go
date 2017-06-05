@@ -22,8 +22,8 @@ func getValidRec(arr []int, result *[][]int, candidate []int, start int, rest in
 		return false
 	} else if rest == 0 {
 		//fmt.Println(candidate)
-		newc :=make([]int, len(candidate))
-		copy(newc,candidate)
+		newc := make([]int, len(candidate))
+		copy(newc, candidate)
 		//newc = append(newc, candidate...)
 		*result = append(*result, newc)
 		//fmt.Println(result)

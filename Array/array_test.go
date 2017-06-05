@@ -21,7 +21,7 @@ func TestGetBestTradingDeal(t *testing.T) {
 //TestJump45
 func TestJump45(t *testing.T) {
 
-	nums := []int{2,3,1,1,4}
+	nums := []int{2, 3, 1, 1, 4}
 	fmt.Println(nums)
 	ret := Jump2(nums)
 	if ret != 2 {
@@ -30,7 +30,7 @@ func TestJump45(t *testing.T) {
 		fmt.Printf("Jump %d\n", ret)
 	}
 
-	nums = []int{2,3,2,0,1,1,4,2,9}
+	nums = []int{2, 3, 2, 0, 1, 1, 4, 2, 9}
 	fmt.Println(nums)
 	ret = Jump2(nums)
 	if ret != 5 {
@@ -39,7 +39,7 @@ func TestJump45(t *testing.T) {
 		fmt.Printf("Jump %d\n", ret)
 	}
 	//
-	nums = []int{2,0,8,0,3,4,7,5,6,1,0,0,5,9,7,5,3,6}
+	nums = []int{2, 0, 8, 0, 3, 4, 7, 5, 6, 1, 0, 0, 5, 9, 7, 5, 3, 6}
 	fmt.Println(nums)
 	ret = Jump2(nums)
 	if ret != 4 {
@@ -48,46 +48,45 @@ func TestJump45(t *testing.T) {
 		fmt.Printf("Jump %d\n", ret)
 	}
 
-
 }
+
 //TestRotateArray
 func TestRotateArray(t *testing.T) {
 
 	arr := []int{9, 10, 11, 14, 2, 3, 4, 5, 6, 7, 8}
 	idx := findMin_153(arr)
 	fmt.Println(arr)
-	fmt.Printf("index=%d\n",idx)
+	fmt.Printf("index=%d\n", idx)
 	if idx != 4 {
-		t.Errorf("index =%d, we want %d", idx,4)
+		t.Errorf("index =%d, we want %d", idx, 4)
 	}
 	arr = []int{9, 10, 11, 2, 3, 4, 5, 6, 7, 8}
 	idx = findMin_153(arr)
 	fmt.Println(arr)
-	fmt.Printf("index=%d\n",idx)
+	fmt.Printf("index=%d\n", idx)
 	if idx != 3 {
-		t.Errorf("index =%d, we want %d", idx,3)
+		t.Errorf("index =%d, we want %d", idx, 3)
 	}
 
 	arr = []int{9, 10, 11}
 	idx = findMin_153(arr)
 	fmt.Println(arr)
-	fmt.Printf("index=%d\n",idx)
+	fmt.Printf("index=%d\n", idx)
 	if idx != 0 {
-		t.Errorf("index =%d, we want %d", idx,0)
+		t.Errorf("index =%d, we want %d", idx, 0)
 	}
 
 	arr = []int{9, 8, 7}
 	idx = findMin_153(arr)
 	fmt.Println(arr)
-	fmt.Printf("index=%d\n",idx)
+	fmt.Printf("index=%d\n", idx)
 	if idx != -1 {
-		t.Errorf("index =%d, we want %d", idx,-1)
+		t.Errorf("index =%d, we want %d", idx, -1)
 	}
 
 }
 
-
-func TestCombination39(t *testing.T ) {
+func TestCombination39(t *testing.T) {
 	nums := []int{2, 3, 6, 7}
 	sum := 7
 	vals := CombinationSum(nums, sum)
@@ -99,8 +98,8 @@ func TestCombination39(t *testing.T ) {
 		t.Errorf("Combination39 Expected results == %d, want %d", 2, 2)
 	}
 }
-func TestCombination39_2(t *testing.T ) {
-	nums := []int{1,2, 3, 6, 7}
+func TestCombination39_2(t *testing.T) {
+	nums := []int{1, 2, 3, 6, 7}
 	sum := 17
 	vals := CombinationSum(nums, sum)
 
@@ -112,16 +111,11 @@ func TestCombination39_2(t *testing.T ) {
 	}
 }
 
+func BenchmarkSum(b *testing.B) {
 
-
-
-func BenchmarkSum(b *testing.B){
-
-	nums := []int{1,2, 3, 6, 7}
+	nums := []int{1, 2, 3, 6, 7}
 	sum := 17
 	for i := 0; i < b.N; i++ {
 		_ = CombinationSum(nums, sum)
 	}
 }
-
-

@@ -1,7 +1,6 @@
 package validBst
 
 import (
-
 	"fmt"
 	"sort"
 )
@@ -11,7 +10,6 @@ type TreeNode struct {
 	Left  *TreeNode
 	Right *TreeNode
 }
-
 
 func IsValidBST(root *TreeNode) bool {
 
@@ -41,50 +39,46 @@ func IsValidBST(root *TreeNode) bool {
 	return true
 }
 
+func ArrayToBST(arr []int) *TreeNode {
 
-func ArrayToBST(arr []int)  *TreeNode {
-
-	rootNode :=TreeNode{ Left:nil,Right:nil}
+	rootNode := TreeNode{Left: nil, Right: nil}
 	sort.Ints(arr)
-	createBst(&rootNode,&arr)
+	createBst(&rootNode, &arr)
 	return &rootNode
 
 }
 
-func createBst(node *TreeNode, arr *[]int){
+func createBst(node *TreeNode, arr *[]int) {
 
-	if node ==nil {
-		node = &TreeNode{ Left: nil, Right: nil}
+	if node == nil {
+		node = &TreeNode{Left: nil, Right: nil}
 	}
 	//if node ==nil {
 	//	node = &TreeNode{ Left: nil, Right: nil}
 	//}
-	if len(*arr)==1 {
-		node.Val=(*arr)[0]
+	if len(*arr) == 1 {
+		node.Val = (*arr)[0]
 		return
 	}
 	//get the middle
-	middle:=len(*arr)/2
-	node.Val=(*arr)[middle-1]
+	middle := len(*arr) / 2
+	node.Val = (*arr)[middle-1]
 	//split slice in two
-	sliceLeft :=(*arr)[0:middle-1]
-	if middle>1 {
-		createBst(node.Left,&sliceLeft )
-	}
-		sliceRight :=(*arr)[middle:]
-		sliceLeft:=(*arr)[0:middle-1]
-		node.Left = &TreeNode{ Left: nil, Right: nil}
+	sliceLeft := (*arr)[0 : middle-1]
+	if middle > 1 {
+		createBst(node.Left, &sliceLeft)
+	} else {
+		//	sliceRight := (*arr)[middle:]
+		sliceLeft := (*arr)[0 : middle-1]
+		node.Left = &TreeNode{Left: nil, Right: nil}
 		createBst(node.Left, &sliceLeft)
 	}
-	sliceRight:=(*arr)[middle:]
-	node.Right = &TreeNode{ Left: nil, Right: nil}
-	createBst(node.Right,&sliceRight)
+	sliceRight := (*arr)[middle:]
+	node.Right = &TreeNode{Left: nil, Right: nil}
+	createBst(node.Right, &sliceRight)
 }
 
-
-
 func traverseInOrder(node *TreeNode, arr *[]int) {
-
 
 	if node == nil {
 		return

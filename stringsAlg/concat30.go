@@ -1,6 +1,5 @@
 package stringsAlg
 
-
 //You are given a string, s, and a list of words, words, that are all of the same length. Find all starting indices of substring(s) in s that is a concatenation of each word in words exactly once and without any intervening characters.
 //
 //For example, given:
@@ -10,25 +9,25 @@ package stringsAlg
 //You should return the indices: [0,9].
 //(order does not matter).
 
-type  mycounter [2]int
+type mycounter [2]int
 
 func findSubstring(s string, words []string) []int {
 	retVals := make([]int, 0)
 
 	// add words
-	ht := make(map[string]mycounter,len(words))
+	ht := make(map[string]mycounter, len(words))
 	wLen := len(words[0])
 
 	for i := 0; i < len(words); i++ {
 
 		if val, ok := ht[words[i]]; ok {
-			cnt :=ht[words[i]]
-			cnt[0] = val[0]+1
-			ht[words[i]] =cnt
+			cnt := ht[words[i]]
+			cnt[0] = val[0] + 1
+			ht[words[i]] = cnt
 		} else {
-			cnt :=ht[words[i]]
+			cnt := ht[words[i]]
 			cnt[0] = 1
-			ht[words[i]] =cnt
+			ht[words[i]] = cnt
 		}
 	}
 	//fmt.Println("ht=",ht)
@@ -45,7 +44,7 @@ func findSubstring(s string, words []string) []int {
 			}
 		}
 	}
-	return  retVals
+	return retVals
 
 }
 
@@ -57,9 +56,9 @@ func checkWords(idx int, word string, s string, ht *map[string]mycounter, wcnt i
 	sLen := len(s)
 	//decrease one we know it is there
 	val, _ := (*ht)[word]
-	cnt :=(*ht)[word]
-	cnt[1] = val[1]+1
-	(*ht)[word] =cnt
+	cnt := (*ht)[word]
+	cnt[1] = val[1] + 1
+	(*ht)[word] = cnt
 	//wcnt := len(*ht) - 1
 	for wcnt-1 > 0 {
 
@@ -71,14 +70,14 @@ func checkWords(idx int, word string, s string, ht *map[string]mycounter, wcnt i
 		if val, ok := (*ht)[nextWord]; ok {
 			//do something here
 			if val[1] < val[0] {
-	//			fmt.Println("b",*ht)
+				//			fmt.Println("b",*ht)
 				// good
-				cnt =(*ht)[nextWord]
-				cnt[1] = val[1]+1
+				cnt = (*ht)[nextWord]
+				cnt[1] = val[1] + 1
 				(*ht)[nextWord] = cnt
 				idx += wLen
 				wcnt--
-	//			fmt.Println("e",*ht)
+				//			fmt.Println("e",*ht)
 			} else {
 				// not good
 				return false
@@ -96,7 +95,7 @@ func checkWords(idx int, word string, s string, ht *map[string]mycounter, wcnt i
 
 func cleanStatusHt(ht *map[string]mycounter) {
 	for k := range *ht {
-		cnt :=(*ht)[k]
+		cnt := (*ht)[k]
 		cnt[1] = 0
 		(*ht)[k] = cnt
 	}
