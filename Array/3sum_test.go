@@ -6,11 +6,8 @@ import (
 )
 
 func TestThreeSum(t *testing.T) {
-
 	nums := []int{-1, 0, 1, 2, -1, -4}
-
 	ret := ThreeSum(nums)
-
 	fmt.Println(ret)
 	if len(ret) != 2 {
 		t.Errorf("Length of array must be 2")

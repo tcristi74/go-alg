@@ -28,6 +28,9 @@ func minPathSum(grid [][]int) int {
 	return 10
 }
 
+
+
+
 func explorePoint(grid *[][]int, ht *map[string]int, origDist int, newPoint Point) {
 
 	if newPoint.x < 0 || newPoint.y < 0 || newPoint.x >= len(*grid) || newPoint.y >= len(*grid) {
