@@ -113,14 +113,45 @@ func TestCombination39_2(t *testing.T ) {
 }
 
 
-
-
 func BenchmarkSum(b *testing.B){
 
 	nums := []int{1,2, 3, 6, 7}
 	sum := 17
 	for i := 0; i < b.N; i++ {
 		_ = CombinationSum(nums, sum)
+	}
+}
+
+func TestSearchInsert(t *testing.T){
+
+	nums:=[]int{1,3,5,6}
+	target:=5
+	var ret int
+	ret=searchInsert(nums,target)
+	if ret != 2 {
+		t.Errorf("SearchInsert == %d, want %d", ret,2 )
+	}
+	target = 10
+	ret=searchInsert(nums,target)
+	if ret != 4 {
+		t.Errorf("SearchInsert == %d, want %d", ret,4)
+	}
+
+	target = 0
+	ret=searchInsert(nums,target)
+	if ret != 0 {
+		t.Errorf("SearchInsert == %d, want %d", ret,0)
+	}
+	target = 3
+	ret=searchInsert(nums,target)
+	if ret != 1 {
+		t.Errorf("SearchInsert == %d, want %d", ret,1)
+	}
+
+	target = 4
+	ret=searchInsert(nums,target)
+	if ret != 2 {
+		t.Errorf("SearchInsert == %d, want %d", ret,2)
 	}
 }
 
