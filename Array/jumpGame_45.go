@@ -25,21 +25,21 @@ func Jump(nums []int) int {
 			dVal := nums[i]
 			if dVal >= distanceLeft {
 				posibHt[i] = 1
-			} else if dVal ==0 {
+			} else if dVal == 0 {
 				posibHt[i] = 99999999
-			} else{
+			} else {
 				// get best posibility
-				minMp := posibHt[i+dVal]+1
+				minMp := posibHt[i+dVal] + 1
 
-				for ;dVal>0;dVal-- {
+				for ; dVal > 0; dVal-- {
 
-					tval:=posibHt[i+dVal]
+					tval := posibHt[i+dVal]
 					if tval < minMp {
 						minMp = tval
 					}
 				}
 
-				posibHt[i] = minMp+1
+				posibHt[i] = minMp + 1
 			}
 		}
 	}
@@ -47,37 +47,36 @@ func Jump(nums []int) int {
 	return posibHt[0]
 }
 
-
 // from beginning to end
 func Jump2(nums []int) int {
 
 	//posibHt := make(map[int]int, len(nums))
-	it :=0
-	if len(nums)==1 {
+	it := 0
+	if len(nums) == 1 {
 		return it
 	}
 
-	rg :=[2]int {0,nums[0]}
+	rg := [2]int{0, nums[0]}
 	fmt.Println(rg)
-	min:=len(nums)
-	max :=0
-	for  rg[1]< len(nums)-1  && rg[0]<rg[1] {
+	min := len(nums)
+	max := 0
+	for rg[1] < len(nums)-1 && rg[0] < rg[1] {
 
 		//expand the array
-		for  i:=rg[0]+1; i<=rg[1];i++ {
-		   if nums[i]>0  && i<min {
-			min = i
-		   }
-		   if max<nums[i]+i{
-			   max = nums[i]+i
-		   }
+		for i := rg[0] + 1; i <= rg[1]; i++ {
+			if nums[i] > 0 && i < min {
+				min = i
+			}
+			if max < nums[i]+i {
+				max = nums[i] + i
+			}
 		}
 		rg[0] = min
 		rg[1] = max
 
-		min=len(nums)
+		min = len(nums)
 		fmt.Println(rg)
-		it ++
+		it++
 	}
-	return it+1
+	return it + 1
 }

@@ -1,7 +1,5 @@
 package Add2Numbers_2
 
-
-
 //import "fmt"
 
 type ListNode struct {
@@ -21,16 +19,16 @@ func RemoveNthFromEndEntry(head *ListNode, n int) *ListNode {
 }
 
 func removeNthFromEnd(head *ListNode, n int) *ListNode {
-	if n==0 {
+	if n == 0 {
 		return head
 	}
 
 	goon := true
 	last := head
-	current :=0
+	current := 0
 	var cn *ListNode
 	for goon {
-		if current-n== 0{
+		if current-n == 0 {
 			cn = head
 		} else if current-n > 0 {
 			cn = cn.Next
@@ -40,10 +38,10 @@ func removeNthFromEnd(head *ListNode, n int) *ListNode {
 			goon = false
 		}
 	}
-	if cn !=nil && cn.Next != nil  &&  cn.Next.Next != nil {
+	if cn != nil && cn.Next != nil && cn.Next.Next != nil {
 		cn.Next = cn.Next.Next
 	}
-	if current==1 && n==1 {
+	if current == 1 && n == 1 {
 		return new(ListNode)
 	}
 

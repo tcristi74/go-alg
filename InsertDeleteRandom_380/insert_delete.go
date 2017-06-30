@@ -74,12 +74,12 @@ func (this *RandomizedSet) GetRandom() int {
 		}
 	}
 
-	tn:=time.Now()
+	tn := time.Now()
 	// use a random seed
 	s1 := rand.NewSource(tn.UnixNano())
 	i := rand.New(s1).Intn(len(this.P))
 	//fmt.Println("index of P-",i)
 	//fmt.Println("value of P",this.P[i])
-	ret  := this.P[i]
+	ret := this.P[i]
 	return ret
 }

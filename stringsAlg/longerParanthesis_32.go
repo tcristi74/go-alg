@@ -11,7 +11,7 @@ package stringsAlg
 func longestValidParentheses(s string) int {
 	ms := NewStack()
 	maxCorrect := 0
-	validPoints :=make(map[int]int,0)
+	validPoints := make(map[int]int, 0)
 	for i := 0; i < len(s); i++ {
 		if s[i] == ')' {
 			//remove from stack, if nothging else reinitialize
@@ -23,8 +23,8 @@ func longestValidParentheses(s string) int {
 				}
 			} else {
 
-				if  val,ok :=  validPoints[idx-1];ok {
-					validPoints[i] = i - idx + 1 +val
+				if val, ok := validPoints[idx-1]; ok {
+					validPoints[i] = i - idx + 1 + val
 				} else {
 					validPoints[i] = i - idx + 1
 				}
@@ -38,6 +38,7 @@ func longestValidParentheses(s string) int {
 	}
 	return maxCorrect
 }
+
 type stack struct {
 	s    []int
 	Size int

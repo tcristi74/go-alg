@@ -43,4 +43,3 @@ func TestRemoveNthFromEndEntry(t *testing.T) {
 		res = res.Next
 	}
 }
-

@@ -8,12 +8,10 @@ import (
 //TestCheckStringIsPalindrome
 func TestCheckStringIsPalindrome(t *testing.T) {
 
-	ret:= CheckStringIsPalindrome("aathisasihtaa")
+	ret := CheckStringIsPalindrome("aathisasihtaa")
 	fmt.Println(ret)
 }
 
-func TestGetSubPalindromesFromString(t *testing.T){
+func TestGetSubPalindromesFromString(t *testing.T) {
 	GetSubPalindromesFromString("thissihmaamdoredoreer")
 }
-
-

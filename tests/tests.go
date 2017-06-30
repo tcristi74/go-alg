@@ -20,6 +20,7 @@ func LoadArray2() []int {
 	return arr
 
 }
+
 //LoadDictionary
 func LoadDictionary() map[string]bool {
 
