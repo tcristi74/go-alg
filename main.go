@@ -2,54 +2,33 @@ package main
 
 import (
 	"fmt"
+	"github.com/tcristi74/go-alg/Hard"
 )
 
-import (
-	//"github.com/tcristi74/go-alg/tests"
-	//"github.com/tcristi74/go-alg/algorithm"
-	//"github.com/tcristi74/go-alg/palindrome"
- 	//"github.com/tcristi74/go-alg/Add2Numbers_2"
-	"github.com/tcristi74/go-alg/LinkedList"
-)
-
-
-
-func init() {
-
-}
-
+//type Curve struct {
+//	IniIndex int
+//	FinIndex int
+//	Area     int
+//}
+//
+//type Curves struct {
+//	List []Curve
+//}
+//
+//func (p *Curves) AddCurve(iniidx int, finidx int, area int) {
+//	c := Curve{IniIndex: iniidx, FinIndex: finidx, Area: area}
+//	(*p).List = append((*p).List, c)
+//	//return p
+//}
 
 func main() {
-
-
-	n1 :=  LinkedList.ListNode{1, nil}
-	n1.Next = &LinkedList.ListNode{3, nil}
-	n1.Next.Next = &LinkedList.ListNode{7, nil}
-	//n1.Next.Next.Next = &ListNode{11, nil}
-	//n1.Next.Next.Next.Next = &ListNode{13, nil}
-
-	n2 := LinkedList.ListNode{0, nil}
-	//n2.Next = &ListNode{4, nil}
-	//n2.Next.Next = &ListNode{10, nil}
-
-	fmt.Println(n1)
-	fmt.Println(n2)
-
-
-	res := LinkedList.MergeTwoLists(&n1, &n2)
-
-	for {
-		if res == nil {
-			break
-		}
-		fmt.Println(res.Val)
-		res = res.Next
+	arr :=[]int {0,1,0,2,1,0,1,3,2,1,2,1}
+	//arr =[]int {4,2,3}
+	arr =[]int {4,2,3,1,2}
+	//arr = []int {4,9,4,5,3,2}
+	ret :=Water.Trap(arr)
+	fmt.Println(ret)
+	if ret !=6 {
+		fmt.Println("return must be 6")
 	}
-
-
 }
-
-
-
-
-
