@@ -26,7 +26,7 @@ func main() {
 	//arr =[]int {4,2,3}
 	arr =[]int {4,2,3,1,2}
 	//arr = []int {4,9,4,5,3,2}
-	ret :=Water.Trap(arr)
+	ret := Hard.Trap(arr)
 	fmt.Println(ret)
 	if ret !=6 {
 		fmt.Println("return must be 6")

@@ -1,4 +1,4 @@
-package Water
+package Hard
 
 import (
 	"testing"
