@@ -33,7 +33,7 @@ func GetSubPalindromesFromString(str string) map[string]int {
 
 func CheckStringIsPalindrome(str string) bool {
 
-	if len(str) <= 1 {
+	if len(str) ==01 {
 		return false
 	}
 	for i := 0; i < len(str)/2; i++ {

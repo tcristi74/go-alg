@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/tcristi74/go-alg/Hard"
+	"github.com/tcristi74/go-alg/StrStr_28"
 )
 
 //type Curve struct {
@@ -22,13 +22,11 @@ import (
 //}
 
 func main() {
-	arr :=[]int {0,1,0,2,1,0,1,3,2,1,2,1}
-	//arr =[]int {4,2,3}
-	arr =[]int {4,2,3,1,2}
-	//arr = []int {4,9,4,5,3,2}
-	ret := Hard.Trap(arr)
+
+	fmt.Println("start")
+
+	ret:=StrStr_28.StrStrHash("ends this is the end","end")
+
 	fmt.Println(ret)
-	if ret !=6 {
-		fmt.Println("return must be 6")
-	}
+
 }

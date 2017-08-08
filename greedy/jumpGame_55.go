@@ -17,7 +17,7 @@ func canJump(nums []int) bool {
 	for i := len(nums) - 2; i >= 0; i-- {
 		// look for zero
 		if nums[i] == 0 {
-			// we gor a problem try solve it
+			// we got a problem try solve it
 			if k := solve(nums[:i]); k >= 0 {
 				fmt.Printf("good k=%d\n", k)
 				i = k
